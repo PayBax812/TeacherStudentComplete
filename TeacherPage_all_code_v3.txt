@@ -1,0 +1,1098 @@
+
+
+===== FILE: TeacherPage/.idea/compiler.xml (size: 881 bytes) =====
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Annotation profile for TeacherPage" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.40/lombok-1.18.40.jar" />
+        </processorPath>
+        <module name="TeacherPage" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="TeacherPage" options="-parameters" />
+    </option>
+  </component>
+</project>
+
+
+===== FILE: TeacherPage/.idea/encodings.xml (size: 191 bytes) =====
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+  </component>
+</project>
+
+
+===== FILE: TeacherPage/.idea/jarRepositories.xml (size: 864 bytes) =====
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+  </component>
+</project>
+
+
+===== FILE: TeacherPage/.idea/misc.xml (size: 486 bytes) =====
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_25" default="true" project-jdk-name="openjdk-25" project-jdk-type="JavaSDK" />
+</project>
+
+
+===== FILE: TeacherPage/.idea/workspace.xml (size: 3901 bytes) =====
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2918b0f1-97bf-48e9-a3d9-466dc8401798" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="HTML File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="344Gl4DehL11wNTIApglXs0IKWe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.TeacherPageApplication.executor": "Run",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Dummy School/TeacherPage",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="TeacherPageApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="TeacherPage" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.TeacherPage.TeacherPageApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2918b0f1-97bf-48e9-a3d9-466dc8401798" name="Changes" comment="" />
+      <created>1760465578886</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760465578886</updated>
+      <workItem from="1760465583357" duration="2447000" />
+      <workItem from="1760468242154" duration="3542000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
+
+
+===== FILE: TeacherPage/.mvn/wrapper/maven-wrapper.properties (size: 168 bytes) =====
+
+wrapperVersion=3.3.4
+distributionType=only-script
+distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.11/apache-maven-3.9.11-bin.zip
+
+
+
+===== FILE: TeacherPage/HELP.md (size: 1739 bytes) =====
+
+# Getting Started
+
+### Reference Documentation
+For further reference, please consider the following sections:
+
+* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.6/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.6/maven-plugin/build-image.html)
+* [Spring Web](https://docs.spring.io/spring-boot/3.5.6/reference/web/servlet.html)
+* [Spring Data JPA](https://docs.spring.io/spring-boot/3.5.6/reference/data/sql.html#data.sql.jpa-and-spring-data)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.5.6/reference/using/devtools.html)
+* [Thymeleaf](https://docs.spring.io/spring-boot/3.5.6/reference/web/servlet.html#web.servlet.spring-mvc.template-engines)
+
+### Guides
+The following guides illustrate how to use some features concretely:
+
+* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
+* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
+* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+* [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
+* [Handling Form Submission](https://spring.io/guides/gs/handling-form-submission/)
+
+### Maven Parent overrides
+
+Due to Maven's design, elements are inherited from the parent POM to the project POM.
+While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
+To prevent this, the project POM contains empty overrides for these elements.
+If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+
+
+
+
+===== FILE: TeacherPage/pom.xml (size: 2780 bytes) =====
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.5.6</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>TeacherPage</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>TeacherPage</name>
+	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>17</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+
+
+
+===== FILE: TeacherPage/src/main/java/com/example/TeacherPage/TeacherPageApplication.java (size: 326 bytes) =====
+
+package com.example.TeacherPage;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TeacherPageApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TeacherPageApplication.class, args);
+	}
+
+}
+
+
+
+===== FILE: TeacherPage/src/main/java/com/example/TeacherPage/controller/TeacherController.java (size: 1258 bytes) =====
+
+package com.example.TeacherPage.controller;
+
+import com.example.TeacherPage.model.teacher;
+import com.example.TeacherPage.service.TeacherService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+@Controller
+@RequestMapping("/teachers")
+public class TeacherController {
+
+    private final TeacherService teacherService;
+
+    public TeacherController(TeacherService teacherService) {
+        this.teacherService = teacherService;
+    }
+
+    @GetMapping("/")
+    public String homePage() {
+        return "index";
+    }
+
+    @GetMapping("/add")
+    public String showAddTeacherForm(Model model) {
+        model.addAttribute("teacher", new teacher());
+        return "add-teacher";
+    }
+
+    @PostMapping("/add")
+    public String addTeacher(@ModelAttribute teacher teachernew, Model model) {
+        teacherService.saveTeacher(teachernew);
+        model.addAttribute("message", "New Teacher Added Successfully!");
+        return "index";
+    }
+
+    @GetMapping("/list")
+    public String listTeachers(Model model) {
+        model.addAttribute("teachers", teacherService.getAllTeachers());
+        return "list-teachers";
+    }
+}
+
+
+
+===== FILE: TeacherPage/src/main/java/com/example/TeacherPage/model/teacher.java (size: 1008 bytes) =====
+
+package com.example.TeacherPage.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "teachers")
+public class teacher {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+    private String subject;
+    private int experience;
+
+    public teacher() {}
+
+    public teacher(String name, String subject, int experience) {
+        this.name = name;
+        this.subject = subject;
+        this.experience = experience;
+    }
+
+    // Getters and setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getSubject() { return subject; }
+    public void setSubject(String subject) { this.subject = subject; }
+
+    public int getExperience() { return experience; }
+    public void setExperience(int experience) { this.experience = experience; }
+}
+
+
+
+===== FILE: TeacherPage/src/main/java/com/example/TeacherPage/repository/TeacherRepository.java (size: 301 bytes) =====
+
+package com.example.TeacherPage.repository;
+
+import com.example.TeacherPage.model.teacher;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface TeacherRepository extends JpaRepository<teacher, Long> {
+}
+
+
+
+===== FILE: TeacherPage/src/main/java/com/example/TeacherPage/service/TeacherService.java (size: 665 bytes) =====
+
+package com.example.TeacherPage.service;
+
+import com.example.TeacherPage.model.teacher;
+import com.example.TeacherPage.repository.TeacherRepository;
+import org.springframework.stereotype.Service;
+import java.util.List;
+
+@Service
+public class TeacherService {
+
+    private final TeacherRepository teacherRepository;
+
+    public TeacherService(TeacherRepository teacherRepository) {
+        this.teacherRepository = teacherRepository;
+    }
+
+    public teacher saveTeacher(teacher teacher) {
+        return teacherRepository.save(teacher);
+    }
+
+    public List<teacher> getAllTeachers() {
+        return teacherRepository.findAll();
+    }
+}
+
+
+
+===== FILE: TeacherPage/src/main/resources/application.properties (size: 326 bytes) =====
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/jay_db
+spring.datasource.username=Jay_Sharma
+spring.datasource.password=12345678
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+spring.thymeleaf.cache=false
+server.port=8080
+
+
+
+===== FILE: TeacherPage/src/main/resources/static/css/style.css (size: 3513 bytes) =====
+
+/* ====== GLOBAL STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* ====== HEADER ====== */
+header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 28px;
+    color: #00d4ff;
+    text-shadow: 0 0 15px #00d4ff;
+    letter-spacing: 1px;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 50px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ====== TITLES ====== */
+h2 {
+    color: #00d4ff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ====== BUTTONS ====== */
+button, .btn {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(135deg, #00aaff, #0056b3);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* ====== LINKS ====== */
+a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #66ffff;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+/* ====== FORMS ====== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="number"] {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 8px #00d4ff;
+}
+
+/* ====== TABLE ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    color: #e0e0e0;
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: center;
+}
+
+table th {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+table tr:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transition: 0.3s;
+}
+
+/* ====== MESSAGE ====== */
+.message {
+    text-align: center;
+    background: rgba(0, 255, 100, 0.15);
+    color: #00ff90;
+    border: 1px solid #00d477;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 255, 150, 0.2);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 15px;
+    color: #ccc;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+===== FILE: TeacherPage/src/main/resources/templates/add-teacher.html (size: 942 bytes) =====
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Teacher</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header>
+    <h1>Add New Teacher</h1>
+</header>
+
+<div class="container">
+    <form th:action="@{/teachers/add}" th:object="${teacher}" method="post">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required>
+
+        <label>Subject:</label>
+        <input type="text" th:field="*{subject}" required>
+
+        <label>Experience (years):</label>
+        <input type="number" th:field="*{experience}" required>
+
+        <button type="submit">Add Teacher</button>
+    </form>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/teachers/">🏠 Back to Home</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 AnnganWadi | Designed by Jay Sharma
+</footer>
+
+</body>
+</html>
+
+
+
+===== FILE: TeacherPage/src/main/resources/templates/index.html (size: 473 bytes) =====
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Teacher Management</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<h1>Welcome to Teacher Management System</h1>
+
+<div th:if="${message}">
+    <h3 th:text="${message}" style="color:green;"></h3>
+</div>
+
+<a href="/teachers/add">Add New Teacher</a><br><br>
+<a href="/teachers/list">View All Teachers</a>
+</body>
+</html>
+
+
+
+===== FILE: TeacherPage/src/main/resources/templates/list-teachers.html (size: 1018 bytes) =====
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Teachers</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header>
+    <h1>All Registered Teachers</h1>
+</header>
+
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Experience</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="teacher : ${teachers}">
+            <td th:text="${teacher.id}"></td>
+            <td th:text="${teacher.name}"></td>
+            <td th:text="${teacher.subject}"></td>
+            <td th:text="${teacher.experience}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/teachers/">🏠 Back to Home</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 AnnganWadi | Designed by Jay Sharma
+</footer>
+
+</body>
+</html>
+
+
+
+===== FILE: TeacherPage/src/test/java/com/example/TeacherPage/TeacherPageApplicationTests.java (size: 220 bytes) =====
+
+package com.example.TeacherPage;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class TeacherPageApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+
+
+
+===== FILE: TeacherPage/target/classes/application.properties (size: 326 bytes) =====
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/jay_db
+spring.datasource.username=Jay_Sharma
+spring.datasource.password=12345678
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+
+spring.thymeleaf.cache=false
+server.port=8080
+
+
+
+===== FILE: TeacherPage/target/classes/static/css/style.css (size: 3513 bytes) =====
+
+/* ====== GLOBAL STYLES ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+    color: #e0e0e0;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* ====== HEADER ====== */
+header {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+    font-size: 28px;
+    color: #00d4ff;
+    text-shadow: 0 0 15px #00d4ff;
+    letter-spacing: 1px;
+}
+
+/* ====== CONTAINER ====== */
+.container {
+    max-width: 850px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 50px;
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* ====== TITLES ====== */
+h2 {
+    color: #00d4ff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* ====== BUTTONS ====== */
+button, .btn {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-size: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(135deg, #00aaff, #0056b3);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* ====== LINKS ====== */
+a {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #66ffff;
+    text-shadow: 0 0 10px #00d4ff;
+}
+
+/* ====== FORMS ====== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+input[type="text"],
+input[type="number"] {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00d4ff;
+    box-shadow: 0 0 8px #00d4ff;
+}
+
+/* ====== TABLE ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    color: #e0e0e0;
+}
+
+table th, table td {
+    padding: 14px;
+    text-align: center;
+}
+
+table th {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+table tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+table tr:hover {
+    background: rgba(0, 212, 255, 0.1);
+    transition: 0.3s;
+}
+
+/* ====== MESSAGE ====== */
+.message {
+    text-align: center;
+    background: rgba(0, 255, 100, 0.15);
+    color: #00ff90;
+    border: 1px solid #00d477;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0, 255, 150, 0.2);
+}
+
+/* ====== FOOTER ====== */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 15px;
+    color: #ccc;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+
+===== FILE: TeacherPage/target/classes/templates/add-teacher.html (size: 942 bytes) =====
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Teacher</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header>
+    <h1>Add New Teacher</h1>
+</header>
+
+<div class="container">
+    <form th:action="@{/teachers/add}" th:object="${teacher}" method="post">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required>
+
+        <label>Subject:</label>
+        <input type="text" th:field="*{subject}" required>
+
+        <label>Experience (years):</label>
+        <input type="number" th:field="*{experience}" required>
+
+        <button type="submit">Add Teacher</button>
+    </form>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/teachers/">🏠 Back to Home</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 AnnganWadi | Designed by Jay Sharma
+</footer>
+
+</body>
+</html>
+
+
+
+===== FILE: TeacherPage/target/classes/templates/index.html (size: 473 bytes) =====
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Teacher Management</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<h1>Welcome to Teacher Management System</h1>
+
+<div th:if="${message}">
+    <h3 th:text="${message}" style="color:green;"></h3>
+</div>
+
+<a href="/teachers/add">Add New Teacher</a><br><br>
+<a href="/teachers/list">View All Teachers</a>
+</body>
+</html>
+
+
+
+===== FILE: TeacherPage/target/classes/templates/list-teachers.html (size: 1018 bytes) =====
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Teachers</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+
+<header>
+    <h1>All Registered Teachers</h1>
+</header>
+
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Experience</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="teacher : ${teachers}">
+            <td th:text="${teacher.id}"></td>
+            <td th:text="${teacher.name}"></td>
+            <td th:text="${teacher.subject}"></td>
+            <td th:text="${teacher.experience}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div style="text-align:center; margin-top:20px;">
+        <a href="/teachers/">🏠 Back to Home</a>
+    </div>
+</div>
+
+<footer>
+    © 2025 AnnganWadi | Designed by Jay Sharma
+</footer>
+
+</body>
+</html>

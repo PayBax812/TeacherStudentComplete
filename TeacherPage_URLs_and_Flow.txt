@@ -1,0 +1,43 @@
+# Extracted URLs and Application Flow
+
+## URLs Found:
+- /
+- /add
+- /css/style.css
+- /list
+- /teachers
+- /teachers/
+- /teachers/add
+- /teachers/list
+- @{/css/style.css}
+
+
+# Program Flow of TeacherPage (Spring Boot Project)
+
+1. **Entry Point** → `TeacherPageApplication.java`
+   - This class contains the `main()` method which launches the Spring Boot application.
+
+2. **Controllers** (Handle routes and URLs)
+   - Controllers map HTTP requests to methods using annotations like `@GetMapping` or `@PostMapping`.
+   - Each route corresponds to a specific page or function.
+
+3. **Service Layer**
+   - Contains business logic (e.g., saving, updating, deleting data).
+
+4. **Repository Layer**
+   - Interfaces extending `JpaRepository` to interact with the PostgreSQL database.
+
+5. **Model Layer**
+   - Java classes annotated with `@Entity`, defining the structure of database tables (e.g., Teacher, Student).
+
+6. **Frontend (Thymeleaf Templates)**
+   - HTML pages located under `src/main/resources/templates/`.
+   - Linked to controllers through URLs like `/teachers/add`, `/teachers/list`, etc.
+
+7. **Database Connection**
+   - Configured in `application.properties` (PostgreSQL connection, username, password, and DB name).
+
+8. **Flow Example:**
+   - User visits `/teachers/add` → Controller loads "add_teacher.html" form.
+   - User submits form → POST request sent to `/teachers/save` → Data processed by Service → Saved in DB.
+   - User visits `/teachers/list` → Controller fetches all teachers → Returns "teacher_list.html" for display.
