@@ -1,0 +1,250 @@
+
+==============================
+EXCEL DOWNLOAD MODULE (STUDENTS + TEACHERS) — FINAL VERSION
+==============================
+
+STEP 1: ADD DEPENDENCY IN pom.xml
+---------------------------------
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>5.2.3</version>
+</dependency>
+
+Then run: mvn clean install
+
+STEP 2: CREATE ExportController.java
+------------------------------------
+File Path: src/main/java/com/example/teacherpage/controller/ExportController.java
+
+------------------------------------------------------
+package com.example.teacherpage.controller;
+
+import com.example.teacherpage.entity.Student;
+import com.example.teacherpage.entity.Teacher;
+import com.example.teacherpage.service.StudentService;
+import com.example.teacherpage.service.TeacherService;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+import java.util.Optional;
+
+@Controller
+public class ExportController {
+
+    @Autowired
+    private StudentService studentService;
+
+    @Autowired
+    private TeacherService teacherService;
+
+    @GetMapping("/export/excel")
+    public void exportExcel(@RequestParam("type") String type, HttpServletResponse response) throws IOException {
+
+        response.setContentType("application/octet-stream");
+        String fileName = type.equalsIgnoreCase("teacher") ? "teachers.xlsx" : "students.xlsx";
+        response.setHeader("Content-Disposition", "attachment; filename=" + fileName);
+
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet(type.equalsIgnoreCase("teacher") ? "Teachers" : "Students");
+
+        CellStyle headerStyle = workbook.createCellStyle();
+        Font font = workbook.createFont();
+        font.setBold(true);
+        headerStyle.setFont(font);
+
+        Row headerRow = sheet.createRow(0);
+
+        if (type.equalsIgnoreCase("student")) {
+            createStudentHeader(headerRow, headerStyle);
+            List<Student> list = studentService.getAllStudents();
+            writeStudentData(list, sheet);
+        } else if (type.equalsIgnoreCase("teacher")) {
+            createTeacherHeader(headerRow, headerStyle);
+            List<Teacher> list = teacherService.getAllTeachers();
+            writeTeacherData(list, sheet);
+        }
+
+        for (int i = 0; i < 6; i++) sheet.autoSizeColumn(i);
+
+        ServletOutputStream outputStream = response.getOutputStream();
+        workbook.write(outputStream);
+        workbook.close();
+        outputStream.close();
+    }
+
+    private void createStudentHeader(Row row, CellStyle style) {
+        String[] headers = {"ID", "Name", "Class", "Email", "Password"};
+        for (int i = 0; i < headers.length; i++) {
+            Cell cell = row.createCell(i);
+            cell.setCellValue(headers[i]);
+            cell.setCellStyle(style);
+        }
+    }
+
+    private void writeStudentData(List<Student> list, Sheet sheet) {
+        int rowCount = 1;
+        for (Student s : list) {
+            Row row = sheet.createRow(rowCount++);
+            row.createCell(0).setCellValue(s.getId());
+            row.createCell(1).setCellValue(Optional.ofNullable(s.getName()).orElse(""));
+            row.createCell(2).setCellValue(Optional.ofNullable(s.getClassName()).orElse(""));
+            row.createCell(3).setCellValue(Optional.ofNullable(s.getEmail()).orElse(""));
+            // Null-safe password masking
+            row.createCell(4).setCellValue("*".repeat(Optional.ofNullable(s.getPassword()).orElse("").length()));
+        }
+    }
+
+    private void createTeacherHeader(Row row, CellStyle style) {
+        String[] headers = {"ID", "Name", "Subject", "Experience"};
+        for (int i = 0; i < headers.length; i++) {
+            Cell cell = row.createCell(i);
+            cell.setCellValue(headers[i]);
+            cell.setCellStyle(style);
+        }
+    }
+
+    private void writeTeacherData(List<Teacher> list, Sheet sheet) {
+        int rowCount = 1;
+        for (Teacher t : list) {
+            Row row = sheet.createRow(rowCount++);
+            row.createCell(0).setCellValue(t.getId());
+            row.createCell(1).setCellValue(Optional.ofNullable(t.getName()).orElse(""));
+            row.createCell(2).setCellValue(Optional.ofNullable(t.getSubject()).orElse(""));
+            row.createCell(3).setCellValue(t.getExperience());
+        }
+    }
+}
+------------------------------------------------------
+
+STEP 3: FINAL HTML FILES
+========================
+
+1️⃣ list-student.html
+------------------------------------------------------
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Students List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Students List</h2>
+
+    <!-- Add and Excel Download Links -->
+    <a href="/students/add" style="margin-right: 20px;">Add New Student</a>
+    <a th:href="@{/export/excel(type='student')}"
+       class="btn btn-success"
+       style="background-color: #28a745; color: white; padding: 6px 12px; border-radius: 5px; text-decoration: none;">
+        ⬇️ Download Student Excel
+    </a>
+
+    <!-- Students Table -->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="s : ${students}">
+            <td th:text="${s.id}"></td>
+            <td th:text="${s.name}"></td>
+            <td th:text="${s.className}"></td>
+            <td th:text="${s.email}"></td>
+            <td th:text="${#strings.repeat('*', s.password.length())}"></td>
+            <td>
+                <a th:href="@{'/students/edit/' + ${s.id}}" class="edit-btn">Edit</a>
+                <a th:href="@{'/students/delete/' + ${s.id}}" class="delete-btn" onclick="return confirm('Delete this student?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Back Button -->
+    <a href="/admin">Back to Admin</a>
+</div>
+</body>
+</html>
+------------------------------------------------------
+
+2️⃣ list-teacher.html
+------------------------------------------------------
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Teachers List</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h2>Teachers List</h2>
+
+    <!-- Add and Excel Download Links -->
+    <a href="/teachers/add" style="margin-right: 20px;">Add New Teacher</a>
+    <a th:href="@{/export/excel(type='teacher')}"
+       class="btn btn-success"
+       style="background-color: #28a745; color: white; padding: 6px 12px; border-radius: 5px; text-decoration: none;">
+        ⬇️ Download Teacher Excel
+    </a>
+
+    <!-- Teachers Table -->
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Experience (Years)</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="t : ${teachers}">
+            <td th:text="${t.id}"></td>
+            <td th:text="${t.name}"></td>
+            <td th:text="${t.subject}"></td>
+            <td th:text="${t.experience}"></td>
+            <td>
+                <a th:href="@{'/teachers/edit/' + ${t.id}}" class="edit-btn">Edit</a>
+                <a th:href="@{'/teachers/delete/' + ${t.id}}" class="delete-btn" onclick="return confirm('Delete this teacher?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Back Button -->
+    <a href="/admin">Back to Admin</a>
+</div>
+</body>
+</html>
+------------------------------------------------------
+
+STEP 4: RUN AND TEST
+--------------------
+1. Start your Spring Boot project.
+2. Go to http://localhost:8080/students/list and click "⬇️ Download Student Excel".
+3. Go to http://localhost:8080/teachers/list and click "⬇️ Download Teacher Excel".
+4. Verify Excel files contain correct data (students.xlsx, teachers.xlsx).
+
+STEP 5: NULL-SAFETY & SECURITY
+------------------------------
+- NullPointerException (NPE) can occur if any field is null.
+- We prevent it using Optional.ofNullable(...).orElse("") so empty cells are inserted instead of crashing.
+- Passwords are masked in Excel with '*' for privacy.
