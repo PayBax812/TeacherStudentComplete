@@ -1,0 +1,346 @@
+🗂 Folder Structure
+llm-module/
+├── index.html
+├── css/
+│   └── llm-style.css
+└── js/
+    └── llm-script.js
+
+🧩 index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM – AI Search & Email Tagging | Rev-Aux</title>
+
+  <!-- Bootstrap + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/llm-style.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      REV-AUX
+      <span>GLOBAL PROCUREMENT PLATFORM</span>
+    </div>
+    <ul class="menu">
+      <li><a href="#"><i class="bi bi-person"></i> Admin</a></li>
+      <li><a href="#"><i class="bi bi-bar-chart-line"></i> Dashboard</a></li>
+      <li><a href="#"><i class="bi bi-bag"></i> Procurement</a></li>
+      <li><a href="#"><i class="bi bi-diagram-3"></i> Program</a></li>
+      <li><a href="#"><i class="bi bi-people"></i> Vendor</a></li>
+      <li><a class="active" href="#"><i class="bi bi-lightning"></i> LLM</a></li>
+    </ul>
+    <div class="logout"><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content">
+    <div class="topbar">
+      <h2>LLM</h2>
+      <div class="user-info"><i class="bi bi-person-circle"></i> Admin</div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab-link active" onclick="showTab('ai-search')">AI Search</button>
+      <button class="tab-link" onclick="showTab('email-tagging')">Email Tagging</button>
+    </div>
+
+    <!-- ========== AI SEARCH TAB ========== -->
+    <section id="ai-search" class="tab-content active">
+      <div class="toolbar">
+        <button class="orange-btn"><i class="bi bi-lightbulb"></i> AI Search Prompt</button>
+        <select class="dropdown">
+          <option>Show all RFQs</option>
+          <option>Show all Vendors</option>
+          <option>Show all References</option>
+        </select>
+      </div>
+
+      <div class="search-box">
+        <input type="text" placeholder="Ask AI Search..." />
+        <button><i class="bi bi-arrow-right"></i></button>
+      </div>
+
+      <div class="results-area">
+        <p class="placeholder-text">Results will appear here...</p>
+      </div>
+    </section>
+
+    <!-- ========== EMAIL TAGGING TAB ========== -->
+    <section id="email-tagging" class="tab-content">
+      <div class="mail-tabs">
+        <button class="mail-tab active">Mail Box 1</button>
+        <button class="mail-tab">Mail Box 2</button>
+        <button class="mail-tab">Mail Box 3</button>
+      </div>
+
+      <div class="tag-toolbar">
+        <input type="text" placeholder="Search mail..." />
+        <button class="add-btn">Add</button>
+        <button class="remove-btn">Remove</button>
+      </div>
+
+      <div class="mail-list">
+        <table class="table align-middle">
+          <thead>
+            <tr><th>Tag</th><th>Subject</th><th>Date</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><input type="checkbox" /></td><td>RFQ – A1 Tooling</td><td>Aug 25</td></tr>
+            <tr><td><input type="checkbox" /></td><td>Quotation Update – Mold 32</td><td>Aug 25</td></tr>
+            <tr><td><input type="checkbox" /></td><td>Inquiry – BrightWorks Industries</td><td>Aug 26</td></tr>
+            <tr><td><input type="checkbox" /></td><td>Follow-up on RFQ #212</td><td>Aug 27</td></tr>
+            <tr><td><input type="checkbox" /></td><td>New RFQ Assignment Notice</td><td>Aug 28</td></tr>
+            <tr><td><input type="checkbox" /></td><td>Technical Scrutiny Comments</td><td>Aug 29</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- JS -->
+  <script src="js/llm-script.js"></script>
+</body>
+</html>
+
+🧩 css/llm-style.css
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f6fa;
+}
+
+/* ---------- SIDEBAR ---------- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background: #1c1b4a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 25px;
+}
+.sidebar-logo {
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sidebar-logo span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #c5c6f0;
+}
+.menu {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #d8d8f5;
+  text-decoration: none;
+  padding: 12px 20px;
+  transition: background 0.3s;
+}
+.menu a:hover,
+.menu a.active {
+  background: #2f2d73;
+  color: #fff;
+}
+.logout {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+.logout a {
+  color: #d8d8f5;
+  text-decoration: none;
+}
+
+/* ---------- MAIN AREA ---------- */
+.main-content {
+  margin-left: 220px;
+  padding: 25px 40px;
+}
+
+/* ---------- TOP BAR ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.topbar h2 {
+  font-weight: 600;
+  color: #1c1b4a;
+}
+.user-info {
+  color: #555;
+  font-size: 14px;
+}
+
+/* ---------- TABS ---------- */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tab-link {
+  background: #e4e5f6;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.tab-link.active {
+  background: #1c1b4a;
+  color: #fff;
+}
+
+/* ---------- TAB CONTENT ---------- */
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ---------- AI SEARCH ---------- */
+.toolbar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.orange-btn {
+  background: #ff9248;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.dropdown {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.search-box {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.search-box input {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+}
+.search-box button {
+  background: #1c1b4a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+}
+.results-area {
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  min-height: 320px;
+}
+.placeholder-text {
+  color: #888;
+  text-align: center;
+  margin-top: 120px;
+}
+
+/* ---------- EMAIL TAGGING ---------- */
+.mail-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.mail-tab {
+  background: #e4e5f6;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.mail-tab.active {
+  background: #1c1b4a;
+  color: #fff;
+}
+.tag-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.tag-toolbar input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.add-btn {
+  background: #1c1b4a;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+.remove-btn {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+.mail-list {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  max-height: 420px;
+  overflow-y: auto;
+}
+.table thead {
+  background: #f0f0fa;
+}
+.table th {
+  font-weight: 600;
+  color: #1c1b4a;
+}
+
+🧩 js/llm-script.js
+// ---- Tab switching ----
+function showTab(tabId) {
+  document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
+  document.querySelectorAll(".tab-link").forEach(btn => btn.classList.remove("active"));
+  document.getElementById(tabId).classList.add("active");
+  event.target.classList.add("active");
+}
+
+// ---- Mailbox inner tabs ----
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".mail-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".mail-tab").forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+    });
+  });
+});
