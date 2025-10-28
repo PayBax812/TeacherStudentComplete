@@ -11,8 +11,11 @@ llm-module/
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LLM – AI Search & Email Tagging | Rev-Aux</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LLM – AI Search & Email Tagging | REV-AUX</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Bootstrap + Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -22,41 +25,56 @@ llm-module/
   <link rel="stylesheet" href="css/llm-style.css" />
 </head>
 <body>
-  <!-- Sidebar -->
-  <aside class="sidebar">
-    <div class="sidebar-logo">
-      REV-AUX
-      <span>GLOBAL PROCUREMENT PLATFORM</span>
+  <!-- Top header (matches rev-aux.com structure) -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <div class="brand">
+        <span class="brand__title">REV-AUX</span>
+        <span class="brand__subtitle">GLOBAL PROCUREMENT PLATFORM</span>
+      </div>
+
+      <nav class="top-nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+        <span class="support">Support – <a href="tel:+12132917846">213.291.7846</a></span>
+      </nav>
     </div>
-    <ul class="menu">
-      <li><a href="#"><i class="bi bi-person"></i> Admin</a></li>
-      <li><a href="#"><i class="bi bi-bar-chart-line"></i> Dashboard</a></li>
-      <li><a href="#"><i class="bi bi-bag"></i> Procurement</a></li>
-      <li><a href="#"><i class="bi bi-diagram-3"></i> Program</a></li>
-      <li><a href="#"><i class="bi bi-people"></i> Vendor</a></li>
-      <li><a class="active" href="#"><i class="bi bi-lightning"></i> LLM</a></li>
+  </header>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" aria-label="App navigation">
+    <ul class="menu" role="menu">
+      <li role="none"><a role="menuitem" href="#"><i class="bi bi-person"></i> Admin</a></li>
+      <li role="none"><a role="menuitem" href="#"><i class="bi bi-bar-chart-line"></i> Dashboard</a></li>
+      <li role="none"><a role="menuitem" href="#"><i class="bi bi-bag"></i> Procurement</a></li>
+      <li role="none"><a role="menuitem" href="#"><i class="bi bi-diagram-3"></i> Program</a></li>
+      <li role="none"><a role="menuitem" href="#"><i class="bi bi-people"></i> Vendor</a></li>
+      <li role="none"><a role="menuitem" class="active" href="#"><i class="bi bi-lightning-charge"></i> LLM</a></li>
     </ul>
     <div class="logout"><a href="#"><i class="bi bi-box-arrow-right"></i> Logout</a></div>
   </aside>
 
   <!-- Main content -->
-  <main class="main-content">
-    <div class="topbar">
-      <h2>LLM</h2>
+  <main class="main-content" id="main">
+    <div class="page-titlebar">
+      <h1 class="h4 mb-0">LLM</h1>
       <div class="user-info"><i class="bi bi-person-circle"></i> Admin</div>
     </div>
 
     <!-- Tabs -->
-    <div class="tabs">
-      <button class="tab-link active" onclick="showTab('ai-search')">AI Search</button>
-      <button class="tab-link" onclick="showTab('email-tagging')">Email Tagging</button>
+    <div class="tabs" role="tablist" aria-label="LLM tabs">
+      <button class="tab-link active" role="tab" aria-selected="true" aria-controls="ai-search" id="tab-ai-search" data-tab="ai-search">AI Search</button>
+      <button class="tab-link" role="tab" aria-selected="false" aria-controls="email-tagging" id="tab-email-tagging" data-tab="email-tagging">Email Tagging</button>
     </div>
 
     <!-- ========== AI SEARCH TAB ========== -->
-    <section id="ai-search" class="tab-content active">
+    <section id="ai-search" class="tab-content active" role="tabpanel" aria-labelledby="tab-ai-search">
       <div class="toolbar">
-        <button class="orange-btn"><i class="bi bi-lightbulb"></i> AI Search Prompt</button>
-        <select class="dropdown">
+        <button type="button" class="accent-btn"><i class="bi bi-lightbulb"></i> AI Search Prompt</button>
+
+        <label class="visually-hidden" for="ai-scope">AI Search Scope</label>
+        <select id="ai-scope" class="dropdown" aria-label="AI Search scope">
           <option>Show all RFQs</option>
           <option>Show all Vendors</option>
           <option>Show all References</option>
@@ -64,35 +82,37 @@ llm-module/
       </div>
 
       <div class="search-box">
-        <input type="text" placeholder="Ask AI Search..." />
-        <button><i class="bi bi-arrow-right"></i></button>
+        <label class="visually-hidden" for="ai-query">Ask AI Search</label>
+        <input id="ai-query" type="text" placeholder="Ask AI Search..." />
+        <button type="button" id="ai-submit" aria-label="Run AI search"><i class="bi bi-arrow-right"></i></button>
       </div>
 
-      <div class="results-area">
+      <div class="results-area" id="results">
         <p class="placeholder-text">Results will appear here...</p>
       </div>
     </section>
 
     <!-- ========== EMAIL TAGGING TAB ========== -->
-    <section id="email-tagging" class="tab-content">
-      <div class="mail-tabs">
-        <button class="mail-tab active">Mail Box 1</button>
-        <button class="mail-tab">Mail Box 2</button>
-        <button class="mail-tab">Mail Box 3</button>
+    <section id="email-tagging" class="tab-content" role="tabpanel" aria-labelledby="tab-email-tagging" hidden>
+      <div class="mail-tabs" role="tablist" aria-label="Mailboxes">
+        <button class="mail-tab active" role="tab" aria-selected="true">Mail Box 1</button>
+        <button class="mail-tab" role="tab" aria-selected="false">Mail Box 2</button>
+        <button class="mail-tab" role="tab" aria-selected="false">Mail Box 3</button>
       </div>
 
       <div class="tag-toolbar">
-        <input type="text" placeholder="Search mail..." />
-        <button class="add-btn">Add</button>
-        <button class="remove-btn">Remove</button>
+        <label class="visually-hidden" for="mail-search">Search mail</label>
+        <input id="mail-search" type="text" placeholder="Search mail..." />
+        <button type="button" class="btn-primary" id="tag-add">Add</button>
+        <button type="button" class="btn-danger" id="tag-remove">Remove</button>
       </div>
 
       <div class="mail-list">
-        <table class="table align-middle">
+        <table class="table align-middle mb-0">
           <thead>
-            <tr><th>Tag</th><th>Subject</th><th>Date</th></tr>
+            <tr><th style="width:44px;"><input type="checkbox" id="check-all" aria-label="Select all"/></th><th>Subject</th><th style="width:120px;">Date</th></tr>
           </thead>
-          <tbody>
+          <tbody id="mail-body">
             <tr><td><input type="checkbox" /></td><td>RFQ – A1 Tooling</td><td>Aug 25</td></tr>
             <tr><td><input type="checkbox" /></td><td>Quotation Update – Mold 32</td><td>Aug 25</td></tr>
             <tr><td><input type="checkbox" /></td><td>Inquiry – BrightWorks Industries</td><td>Aug 26</td></tr>
@@ -111,236 +131,216 @@ llm-module/
 </html>
 
 🧩 css/llm-style.css
-/* ---------- GLOBAL ---------- */
-body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f5f6fa;
+/* ---- Brand palette (approx. from rev-aux.com) ---- */
+:root{
+  --navy:#16233b;        /* header / sidebar */
+  --navy-2:#1f3052;      /* hover / deep */
+  --gray-bg:#f6f7fb;     /* app background */
+  --card:#ffffff;        /* surfaces */
+  --border:#e8eaf2;
+  --text:#142033;
+  --muted:#6b768a;
+  --accent:#ff8a33;      /* orange CTAs */
+  --ring:#5b8cff;
+  --danger:#dc3545;
 }
 
-/* ---------- SIDEBAR ---------- */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 220px;
-  background: #1c1b4a;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 25px;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--gray-bg);
+  color:var(--text);
+  font-family:"Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
 }
-.sidebar-logo {
-  font-weight: 700;
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 40px;
-}
-.sidebar-logo span {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 1px;
-  color: #c5c6f0;
-}
-.menu {
-  list-style: none;
-  padding: 0;
-  width: 100%;
-}
-.menu a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #d8d8f5;
-  text-decoration: none;
-  padding: 12px 20px;
-  transition: background 0.3s;
-}
-.menu a:hover,
-.menu a.active {
-  background: #2f2d73;
-  color: #fff;
-}
-.logout {
-  margin-top: auto;
-  margin-bottom: 20px;
-}
-.logout a {
-  color: #d8d8f5;
-  text-decoration: none;
-}
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;border:0;padding:0;clip:rect(0 0 0 0);overflow:hidden}
 
-/* ---------- MAIN AREA ---------- */
-.main-content {
-  margin-left: 220px;
-  padding: 25px 40px;
+/* ---- Site header (matches public site) ---- */
+.site-header{
+  background:var(--navy);
+  color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
+.site-header__inner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;
+}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand__title{font-weight:700;font-size:20px;letter-spacing:.3px}
+.brand__subtitle{font-size:10px;opacity:.8;letter-spacing:1px}
+.top-nav{display:flex;gap:18px;align-items:center}
+.top-nav a{color:#e8ecf6;text-decoration:none;font-size:14px}
+.top-nav a:hover{color:#fff}
+.top-nav .support{color:#cfd7ea}
+.top-nav .support a{color:#fff;text-decoration:none}
 
-/* ---------- TOP BAR ---------- */
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 25px;
+/* ---- Sidebar ---- */
+.sidebar{
+  position:fixed; left:0; top:56px; bottom:0;  /* below header */
+  width:210px; background:var(--navy); color:#fff;
+  display:flex; flex-direction:column; padding:10px 0;
 }
-.topbar h2 {
-  font-weight: 600;
-  color: #1c1b4a;
+.menu{list-style:none;margin:0;padding:8px 0}
+.menu a{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 16px;color:#d6def0;text-decoration:none;
 }
-.user-info {
-  color: #555;
-  font-size: 14px;
-}
+.menu a:hover,.menu a.active{background:var(--navy-2); color:#fff}
+.logout{margin-top:auto;padding:8px 16px}
+.logout a{color:#d6def0;text-decoration:none}
 
-/* ---------- TABS ---------- */
-.tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+/* ---- Main area ---- */
+.main-content{
+  margin-left:210px; padding:20px 28px;
+  padding-top: calc(20px + 56px); /* account for fixed header */
 }
-.tab-link {
-  background: #e4e5f6;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.tab-link.active {
-  background: #1c1b4a;
-  color: #fff;
-}
+.page-titlebar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.user-info{color:#c0c7d7;display:flex;align-items:center;gap:8px}
 
-/* ---------- TAB CONTENT ---------- */
-.tab-content { display: none; }
-.tab-content.active { display: block; }
+/* ---- Tabs ---- */
+.tabs{display:flex;gap:10px;margin-bottom:14px}
+.tab-link{
+  background:#e7ebf6;border:none;padding:9px 16px;border-radius:8px;
+  font-weight:500;cursor:pointer;transition:background .2s;
+}
+.tab-link.active{background:var(--navy);color:#fff}
+.tab-link:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
 
-/* ---------- AI SEARCH ---------- */
-.toolbar {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-.orange-btn {
-  background: #ff9248;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-weight: 500;
-}
-.dropdown {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-.search-box {
-  display: flex;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.search-box input {
-  flex: 1;
-  padding: 10px 15px;
-  border: none;
-  outline: none;
-}
-.search-box button {
-  background: #1c1b4a;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-}
-.results-area {
-  background: #fff;
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 20px;
-  min-height: 320px;
-}
-.placeholder-text {
-  color: #888;
-  text-align: center;
-  margin-top: 120px;
-}
+/* ---- Panels ---- */
+.tab-content{display:none}
+.tab-content.active{display:block}
+.tab-content[hidden]{display:none!important}
 
-/* ---------- EMAIL TAGGING ---------- */
-.mail-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 15px;
+/* ---- AI Search ---- */
+.toolbar{display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.accent-btn{
+  background:var(--accent);color:#fff;border:none;padding:8px 14px;border-radius:8px;font-weight:600
 }
-.mail-tab {
-  background: #e4e5f6;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 6px;
-  cursor: pointer;
+.dropdown{
+  padding:8px 12px;border-radius:8px;border:1px solid #d6d9e6;background:#fff
 }
-.mail-tab.active {
-  background: #1c1b4a;
-  color: #fff;
+.search-box{
+  display:flex;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff
 }
-.tag-toolbar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
+.search-box input{flex:1;border:none;outline:none;padding:12px 14px;font-size:15px}
+.search-box button{background:var(--navy);color:#fff;border:none;padding:0 18px;display:grid;place-items:center}
+.search-box button:focus-visible{outline:3px solid var(--ring);outline-offset:-3px}
+
+.results-area{
+  background:var(--card);border-radius:12px;margin-top:16px;padding:18px;min-height:320px;border:1px solid var(--border)
 }
-.tag-toolbar input {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.placeholder-text{color:var(--muted);text-align:center;margin-top:110px}
+
+/* ---- Email Tagging ---- */
+.mail-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.mail-tab{
+  background:#e7ebf6;border:none;padding:8px 16px;border-radius:8px;cursor:pointer
 }
-.add-btn {
-  background: #1c1b4a;
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
+.mail-tab.active{background:var(--navy);color:#fff}
+.mail-tab:focus-visible{outline:3px solid var(--ring);outline-offset:2px}
+
+.tag-toolbar{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.tag-toolbar input{flex:1;padding:10px 12px;border:1px solid #d6d9e6;border-radius:8px;background:#fff}
+.btn-primary{background:var(--navy);color:#fff;border:none;padding:10px 14px;border-radius:8px}
+.btn-danger{background:var(--danger);color:#fff;border:none;padding:10px 14px;border-radius:8px}
+
+.mail-list{
+  background:var(--card);border-radius:10px;padding:10px 12px;max-height:420px;overflow-y:auto;border:1px solid var(--border)
 }
-.remove-btn {
-  background: #dc3545;
-  color: #fff;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
+.table thead{position:sticky;top:0;background:#f2f4fb;z-index:1}
+.table th{font-weight:600;color:var(--navy)}
+.table tbody tr.tagged td{background:#fff5eb}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px){
+  .main-content{padding:16px 20px}
 }
-.mail-list {
-  background: #fff;
-  border-radius: 8px;
-  padding: 10px 15px;
-  max-height: 420px;
-  overflow-y: auto;
-}
-.table thead {
-  background: #f0f0fa;
-}
-.table th {
-  font-weight: 600;
-  color: #1c1b4a;
+@media (max-width: 760px){
+  .site-header__inner{flex-direction:column;align-items:flex-start;gap:8px}
+  .top-nav{flex-wrap:wrap;gap:12px}
+  .sidebar{position:static;width:100%;top:auto}
+  .main-content{margin-left:0;padding-top:16px}
+  .logout{display:none}
 }
 
 🧩 js/llm-script.js
-// ---- Tab switching ----
-function showTab(tabId) {
-  document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
-  document.querySelectorAll(".tab-link").forEach(btn => btn.classList.remove("active"));
-  document.getElementById(tabId).classList.add("active");
-  event.target.classList.add("active");
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+
+function setActiveTab(id){
+  $$(".tab-link").forEach(btn=>{
+    const on = btn.dataset.tab === id;
+    btn.classList.toggle("active", on);
+    btn.setAttribute("aria-selected", String(on));
+  });
+  $$(".tab-content").forEach(p=>{
+    const on = p.id === id;
+    p.classList.toggle("active", on);
+    p.toggleAttribute("hidden", !on);
+  });
+  if(history.replaceState) history.replaceState(null,"",`#${id}`);
 }
 
-// ---- Mailbox inner tabs ----
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".mail-tab").forEach(tab => {
-    tab.addEventListener("click", () => {
-      document.querySelectorAll(".mail-tab").forEach(t => t.classList.remove("active"));
+function initTabs(){
+  $$(".tab-link").forEach(btn=>{
+    btn.addEventListener("click", ()=>setActiveTab(btn.dataset.tab));
+    btn.addEventListener("keydown", e=>{
+      if(!["ArrowLeft","ArrowRight"].includes(e.key)) return;
+      const buttons = $$(".tab-link");
+      const i = buttons.indexOf(document.activeElement);
+      const next = e.key==="ArrowRight" ? (i+1)%buttons.length : (i-1+buttons.length)%buttons.length;
+      buttons[next].focus();
+      setActiveTab(buttons[next].dataset.tab);
+    });
+  });
+  const fromHash = location.hash?.slice(1);
+  setActiveTab(fromHash && $(`#${fromHash}`) ? fromHash : "ai-search");
+}
+
+function initAISearch(){
+  const input=$("#ai-query"), button=$("#ai-submit"), scope=$("#ai-scope"), results=$("#results");
+  const render = (q)=> results.innerHTML = q
+    ? `<div><div class="small text-muted mb-2">Scope: <strong>${scope.value}</strong></div><div><strong>Query:</strong> ${q}</div><hr/><div class="text-muted">[Mock] This is where AI search results will render.</div></div>`
+    : `<p class="placeholder-text">Results will appear here...</p>`;
+  button.addEventListener("click", ()=>render(input.value.trim()));
+  input.addEventListener("keydown", e=>{ if(e.key==="Enter"){ e.preventDefault(); render(input.value.trim()); }});
+}
+
+function initEmailTagging(){
+  $$(".mail-tab").forEach(tab=>{
+    tab.addEventListener("click", ()=>{
+      $$(".mail-tab").forEach(t=>t.classList.remove("active"));
       tab.classList.add("active");
     });
   });
+  $("#check-all")?.addEventListener("change", ()=>{
+    $$("#mail-body input[type='checkbox']").forEach(cb=> cb.checked = $("#check-all").checked);
+  });
+  $("#tag-add")?.addEventListener("click", ()=>{
+    $$("#mail-body tr").forEach(row=>{
+      const cb = $("input[type='checkbox']", row);
+      if(cb?.checked) row.classList.add("tagged");
+    });
+  });
+  $("#tag-remove")?.addEventListener("click", ()=>{
+    $$("#mail-body tr").forEach(row=>{
+      const cb = $("input[type='checkbox']", row);
+      if(cb?.checked) row.classList.remove("tagged");
+    });
+  });
+  $("#mail-search")?.addEventListener("input", (e)=>{
+    const q = e.target.value.toLowerCase();
+    $$("#mail-body tr").forEach(row=>{
+      const subject = row.children[1].textContent.toLowerCase();
+      row.style.display = subject.includes(q) ? "" : "none";
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  initTabs();
+  initAISearch();
+  initEmailTagging();
 });
